@@ -140,6 +140,68 @@ The tool provides **data-driven insights** through graphs:
   - If it fails, regenerate SSH keys and add them to GitHub.
 
 ---
+# **Deployment on AWS**
+
+This app was successfully **deployed on AWS** using **EC2 instance**.
+
+### **1.AWS EC2 Setup**
+
+- Created an **EC2 instance** using **Ubuntu 22.04 (x86_64)**.
+- Choose **t2.micro** (Free Tier Eligible).
+- Opened port **8501** for public access.
+
+### **2.Configuring the Instance**
+
+```bash
+# Update system packages
+sudo apt update && sudo apt upgrade -y
+
+# Install Python and pip
+sudo apt install python3 python3-pip -y
+
+# Install Git
+sudo apt install git -y
+
+# Clone the repository
+git clone https://github.com/Pratham-mehta/Stock-Market-Analyzer.git
+cd Stock-Market-Analyzer
+
+# Install required dependencies
+pip3 install -r requirements.txt
+```
+
+### **3.Running the Streamlit App**
+
+```bash
+export PATH=$HOME/.local/bin:$PATH  # Ensure Streamlit is accessible
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
+
+**App now accessible at:** `http://<EC2_PUBLIC_IP>:8501`
+
+### **4.Running Streamlit in Background**
+
+To keep the app running **even after closing the SSH session**:
+
+```bash
+nohup streamlit run app.py --server.port 8501 --server.address 0.0.0.0 &
+```
+
+### **5.Stopping the Application**
+
+To **stop Streamlit**, run:
+
+```bash
+ps aux | grep streamlit
+kill <PID>
+```
+
+Or kill all Streamlit processes:
+
+```bash
+pkill -f streamlit
+```
+---
 
 
 ## **Contributing**
