@@ -89,7 +89,7 @@ streamlit run app.py
 ```
 - This will open a web browser with the **Stock Market Portfolio Analyzer** interface.
 
-### 🔹 **Using the Web App**
+### **Using the Web App**
 1. **Add Stocks to Portfolio**:
    - Enter stock tickers (e.g., `AAPL,GOOGL`).
    - Specify number of shares & purchase price.
