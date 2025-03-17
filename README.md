@@ -179,6 +179,10 @@ streamlit run app.py --server.port 8501 --server.address 0.0.0.0
 
 **App now accessible at:** `http://<EC2_PUBLIC_IP>:8501`
 
+- My `<EC2_PUBLIC_IP>` is `54.85.217.19`
+
+- Website is live and deployed at http://54.85.217.19:8501
+
 ### **4.Running Streamlit in Background**
 
 To keep the app running **even after closing the SSH session**:
